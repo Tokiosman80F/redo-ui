@@ -2,6 +2,8 @@
   --font-primary: "Rethink Sans", system-ui, sans-serif;
   --black: #000000;
   --gray: #575757;
+  --accent-1: #f45f00;
+  --border: 1px solid rgba(0, 0, 0, 0.1);
 }
 * {
   margin: 0;
@@ -32,9 +34,23 @@ body {
   font-family: var(--font-primary);
   font-weight: 400;
   color: #000;
+  overflow: hidden;
 }
-
-/* reuse */
+/* Reuse */
+.border-1 {
+  border: 1px solid;
+}
+.hidden {
+  display: none;
+}
+.p-32 {
+  padding-right: 32px;
+  padding-left: 32px;
+}
+.b-none {
+  border: none;
+}
+/* Typography */
 .display {
   font-family: var(--font-primary);
   font-size: 10px;
@@ -126,7 +142,8 @@ body {
 /* base: Main website  */
 .rd {
   display: grid;
-  grid-template-columns: 250px minmax(0, 1030px);
+  grid-template-columns: 250px 1fr;
+  height: 100vh;
 }
 .rd__sidebar {
   display: grid;
@@ -135,6 +152,13 @@ body {
     "nav"
     "actions";
   align-content: start;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 250px;
+  height: 100vh;
+  z-index: 100;
+  overflow-y: auto;
 }
 .rd__brand {
   grid-area: brand;
@@ -144,10 +168,18 @@ body {
   width: 51.01px;
   height: 11.83px;
 }
+.rd__menu-toogle {
+  display: none;
+}
+.rd__menu-toogle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
 .rd__nav {
   grid-area: nav;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: var(--border);
+  border-bottom: var(--border);
 }
 .rd__nav-list {
   display: flex;
@@ -175,17 +207,152 @@ body {
 .rd__action-link {
   color: var(--gray);
   text-transform: capitalize;
+  font-size: 15px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  font-weight: 700;
 }
 
 .rd__content {
+  grid-column: 2;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100vh;
+}
+.rd__hero {
+  width: 100%;
+  height: auto;
+}
+.rd__hero img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
+/* common class */
+.rd__intro,
+.rd__content-table,
+.rd__brand-strategy,
+.rd__personality {
+  padding-top: 32px;
+  padding-bottom: 120px;
+  display: flex;
+  gap: 32px;
+  border-bottom: var(--border);
+}
+
+.rd__intro-heading,
+.rd__intro-content,
+.rd__content-heading,
+.rd__content-info,
+.rd__brand-strategy-heading,
+.rd__brand-strategy-info,
+.rd__personality-heading,
+.rd__personality-info {
+  flex: 1;
+}
+
+.rd__intro-content,
+.rd__brand-strategy-content,
+.rd__personality-content {
+  text-align: start;
+  color: var(--gray);
+}
+/* Brand Guideline */
+.rd__intro {
+}
+
+/* .rd__intro-heading,
+.rd__intro-content {
+  flex: 1;
+} */
+.rd__intro-heading {
+  text-align: start;
+}
+.rd__intro-heading h1 {
+}
+.rd__intro-content {
+}
+.rd__intro-content p {
+}
+
+/* --------Contents----------------- */
+
+.rd__content-heading {
+}
+.rd__content-info {
+  margin-left: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rd__content-info h2 {
+}
+.rd__content-num {
+  color: var(--gray);
+}
+
+/* --------Brand Strategy----------------- */
+.span-orange {
+  color: var(--accent-1);
+}
+.rd__brand-strategy {
+}
+.rd__brand-strategy-heading {
+}
+.rd__brand-strategy-info {
+  margin-left: 32px;
+}
+
+/* --------Personality----------------- */
+.rd__personality {
+}
+.rd__personality-heading {
+}
+.rd__personality-info {
+}
+.rd__personality-content {
+  margin-left: 32px;
+}
+
+.rd__brand-strategy-info img {
+  margin: 32px 0;
+}
+
+/* --------Personality Image----------------- */
+.rd__personality-img {
+  width: 100%;
+}
+.rd__personality-img img {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --------Tone and voice----------------- */
+
+.rd__tone {
+}
+.rd__tone-heading {
+}
+.rd__tone-info {
+}
+.rd__tone-content {
+}
+
+/* --------Responsive tablet----------------- */
 @media (max-width: 1279px) {
   .rd {
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
   }
   .rd__sidebar {
+    position: static;
+    width: auto;
+    height: auto;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
       "brand actions"
@@ -206,5 +373,61 @@ body {
     justify-content: flex-end;
     gap: 12px;
     padding: 0;
+  }
+  .rd__action-link {
+    font-size: 13px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    font-weight: 400;
+  }
+  .rd__content {
+    grid-column: auto;
+    height: auto;
+    overflow-y: auto;
+  }
+  /* common */
+  .rd__intro,
+  .rd__content-table {
+    padding-bottom: 80px;
+  }
+}
+
+@media (max-width: 779px) {
+  .p-32 {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  .rd__menu-toogle {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0;
+  }
+  .rd__nav,
+  .rd__action {
+    display: none;
+  }
+  .rd__nav.isOpen .rd__nav,
+  .rd__nav.isOpen .rd__action {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+  }
+  /* brand guideline */
+  .rd__intro,
+  .rd__content-table,
+  .rd__brand-strategy,
+  .rd__personality {
+    flex-direction: column;
+  }
+  .rd__intro-heading h1 br,
+  .rd__brand-strategy-heading h1 br {
+    display: none;
+  }
+  /* Content table  */
+  .rd__content-info,
+  .rd__brand-strategy-info,
+  .rd__personality-content {
+    margin-left: 0;
   }
 }
