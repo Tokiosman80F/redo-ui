@@ -50,6 +50,9 @@ body {
 .b-none {
   border: none;
 }
+.text-gray {
+  color: var(--gray);
+}
 /* Typography */
 .display {
   font-family: var(--font-primary);
@@ -248,7 +251,9 @@ body {
 .rd__brand-strategy-heading,
 .rd__brand-strategy-info,
 .rd__personality-heading,
-.rd__personality-info {
+.rd__personality-info,
+.rd__tone-heading,
+.rd__tone-info {
   flex: 1;
 }
 
@@ -335,14 +340,43 @@ body {
 /* --------Tone and voice----------------- */
 
 .rd__tone {
+  display: flex;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  justify-content: space-between;
+  gap: 32px;
+  border-bottom: var(--border);
 }
 .rd__tone-heading {
 }
 .rd__tone-info {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 .rd__tone-content {
 }
 
+/* --------sample copy----------------- */
+.rd__sample-copy {
+  padding-top: 32px;
+  padding-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  align-items: flex-start;
+}
+.rd__sample-copy-heading {
+}
+.rd__sample-copy-info {
+  display: flex;
+  gap: 32px;
+}
+.rd__sample-copy-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 /* --------Responsive tablet----------------- */
 @media (max-width: 1279px) {
   .rd {
