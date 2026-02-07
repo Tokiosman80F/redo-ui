@@ -53,6 +53,9 @@ body {
 .text-gray {
   color: var(--gray);
 }
+.span-orange {
+  color: var(--accent-1);
+}
 /* Typography */
 .display {
   font-family: var(--font-primary);
@@ -299,9 +302,7 @@ body {
 }
 
 /* --------Brand Strategy----------------- */
-.span-orange {
-  color: var(--accent-1);
-}
+
 .rd__brand-strategy {
 }
 .rd__brand-strategy-heading {
@@ -359,23 +360,95 @@ body {
 
 /* --------sample copy----------------- */
 .rd__sample-copy {
-  padding-top: 32px;
-  padding-bottom: 32px;
+  padding-top: 30px;
+  padding-bottom: 80px;
   display: flex;
   flex-direction: column;
   gap: 64px;
   align-items: flex-start;
+  border-bottom: var(--border);
 }
 .rd__sample-copy-heading {
 }
 .rd__sample-copy-info {
   display: flex;
+  padding: 32px 0;
   gap: 32px;
 }
 .rd__sample-copy-content {
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+/* --------03 Logo----------------- */
+.rd__logo {
+  padding-top: 32px;
+  padding-bottom: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  border-bottom: var(--border);
+}
+.rd__logo-intro {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+}
+.rd__logo-intro h1,
+.rd__logo-intro p {
+  flex: 1;
+}
+.rd__logo-intro h1 {
+}
+.rd__logo-intro p {
+}
+
+.rd__logo-images {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  padding-top: 40px;
+}
+.rd__logo-image-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* align-items: flex-start; */
+}
+.rd__logo-image-content img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.logo__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px 16px;
+}
+.logo__grid-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+}
+.logo__grid-content picture {
+  width: 100%;
+  display: block;
+}
+.logo__grid-content picture img {
+  width: 100%;
+}
+.logo__grid-content-heading img {
+  width: 16px;
+  height: 16px;
+}
+.logo__grid-content-heading {
+  display: flex;
+  justify-content: flex-start;
+  gap: 5px;
+  align-items: center;
 }
 /* --------Responsive tablet----------------- */
 @media (max-width: 1279px) {
@@ -424,6 +497,13 @@ body {
   .rd__content-table {
     padding-bottom: 80px;
   }
+
+  /* --------03 Logo----------------- */
+  .rd__logo {
+    padding-top: 88px;
+    padding-bottom: 80px;
+    gap: 0;
+  }
 }
 
 @media (max-width: 779px) {
@@ -463,5 +543,26 @@ body {
   .rd__brand-strategy-info,
   .rd__personality-content {
     margin-left: 0;
+  }
+  /* tone */
+  .rd__tone {
+    flex-direction: column;
+  }
+  /* sample copy */
+  .rd__sample-copy-info {
+    flex-direction: column;
+  }
+
+  /* --------03 Logo----------------- */
+  .rd__logo {
+    gap: 30px;
+  }
+  .rd__logo-intro {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .logo__grid {
+    grid-template-columns: 1fr;
   }
 }
