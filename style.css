@@ -212,6 +212,7 @@ body {
   height: 100vh;
   z-index: 100;
   overflow-y: auto;
+  border-right: var(--border);
 }
 .rd__brand {
   grid-area: brand;
@@ -223,6 +224,7 @@ body {
 }
 .rd__menu-toogle {
   display: none;
+  grid-area: menubar;
 }
 .rd__menu-toogle-btn {
   background: none;
@@ -339,6 +341,7 @@ body {
 
 .rd__brand-strategy-info img {
   margin: 32px 0;
+  width: 100%;
 }
 
 /* --------Personality Image----------------- */
@@ -528,6 +531,18 @@ body {
 }
 /* --------05 Typography----------------- */
 
+.rd__typo-heading-img {
+  width: 100%;
+  display: block;
+  height: auto;
+}
+.rd__typo-heading-img img {
+  width: 100%;
+  width: 100%;
+  display: block;
+  height: auto;
+}
+
 .rd__typo-content {
   padding: 0 32px;
   display: flex;
@@ -630,8 +645,7 @@ body {
   display: flex;
   gap: 51px;
 }
-.footer-nav li {
-}
+
 .footer-nav li a {
   color: inherit;
 }
@@ -728,6 +742,10 @@ body {
     padding-right: 20px;
     padding-left: 20px;
   }
+  .rd__sidebar {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "brand menubar";
+  }
   .rd__menu-toogle {
     display: flex;
     align-items: center;
@@ -735,135 +753,161 @@ body {
     padding: 0;
   }
   .rd__nav,
-  .rd__action {
+  .rd__actions {
     display: none;
   }
-  .rd__nav.isOpen .rd__nav,
-  .rd__nav.isOpen .rd__action {
+  .rd__sidebar.isOpen .rd__nav,
+  .rd__sidebar.isOpen .rd__actions {
     display: flex;
-    flex-direction: column;
-    align-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
   }
-  /* brand guideline */
-  .rd__intro,
-  .rd__content-table,
-  .rd__brand-strategy,
-  .rd__personality {
-    flex-direction: column;
+  .rd__sidebar.isOpen {
+    grid-template-areas:
+      "brand menubar"
+      "nav nav"
+      "actions actions";
+    align-content: start;
+    background: white;
+    z-index: 100;
+    position: relative;
+    border-bottom: var(--border);
   }
-  .rd__intro-heading h1 br,
-  .rd__brand-strategy-heading h1 br {
-    display: none;
-  }
-  /* Content table  */
-  .rd__content-info,
-  .rd__brand-strategy-info,
-  .rd__personality-content {
-    margin-left: 0;
-  }
-  /* tone */
-  .rd__tone {
-    flex-direction: column;
-  }
-  /* sample copy */
-  .rd__sample-copy-info {
-    flex-direction: column;
+  .rd__sidebar.isOpen .rd__nav {
+    border-top: var(--border);
+    border-bottom: var(--border);
+    padding: 0;
+    margin-top: 10px;
   }
 
-  /* --------03 Logo----------------- */
-  .rd__logo {
-    gap: 30px;
-  }
-  .rd__logo-intro {
+  .rd__sidebar.isOpen .rd__nav-list {
     flex-direction: column;
-    gap: 12px;
+    padding: 20px 0;
   }
 
-  .logo__grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* --------04 Color----------------- */
-
-  .rd__color-intro {
+  .rd__sidebar.isOpen .rd__actions {
     flex-direction: column;
-  }
-
-  /* .rd__color {
-  }
-  .rd__color-intro {
-  } */
-  .rd__color-primary-content {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-  }
-  .color__grid {
-    flex-direction: column;
-    gap: 40px;
-  }
-  .color__grid-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    /* border: 1px solid; */
+    padding: 20px 0;
     gap: 10px;
+    border-bottom: var(--border);
   }
-  .color__grid-content picture {
-    width: 100%;
-    height: auto;
-  }
-  .color__grid-content picture img {
-    width: 100%;
-    height: auto;
-  }
+}
+/* brand guideline */
+.rd__intro,
+.rd__content-table,
+.rd__brand-strategy,
+.rd__personality {
+  flex-direction: column;
+}
+.rd__intro-heading h1 br,
+.rd__brand-strategy-heading h1 br {
+  display: none;
+}
+/* Content table  */
+.rd__content-info,
+.rd__brand-strategy-info,
+.rd__personality-content {
+  margin-left: 0;
+}
+/* tone */
+.rd__tone {
+  flex-direction: column;
+}
+/* sample copy */
+.rd__sample-copy-info {
+  flex-direction: column;
+}
 
-  .rd__color-secondary-content {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  .color__grid--secondary {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
+/* --------03 Logo----------------- */
+.rd__logo {
+  gap: 30px;
+}
+.rd__logo-intro {
+  flex-direction: column;
+  gap: 12px;
+}
 
-  .color__grid-content-caption {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
+.logo__grid {
+  grid-template-columns: 1fr;
+}
 
-  .color__grid--grident {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-  /* -------------05 Typography------------------ */
-  .rd__typo-intro {
-    flex-direction: column;
-    gap: 12px;
-  }
-  .rd__typo-heading {
-    padding-bottom: 60px;
-  }
-  .rd__typo-content--sizing {
-    flex-direction: column;
-  }
-  .rd__typo--sizing {
-    flex-direction: column;
-  }
-  /* ------------06 Art--------- */
-  .rd__art-intro {
-    flex-direction: column;
-  }
-  .art__grid--grident {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-  /* ---------Footer------- */
-  .footer-nav {
-    flex-direction: column;
-    gap: 19px;
-  }
+/* --------04 Color----------------- */
+
+.rd__color-intro {
+  flex-direction: column;
+}
+
+.rd__color-primary-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.color__grid {
+  flex-direction: column;
+  gap: 40px;
+}
+.color__grid-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+.color__grid-content picture {
+  width: 100%;
+  height: auto;
+}
+.color__grid-content picture img {
+  width: 100%;
+  height: auto;
+}
+
+.rd__color-secondary-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.color__grid--secondary {
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+.color__grid-content-caption {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.color__grid--grident {
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+/* -------------05 Typography------------------ */
+.rd__typo-intro {
+  flex-direction: column;
+  gap: 12px;
+}
+.rd__typo-heading {
+  padding-bottom: 60px;
+}
+
+.rd__typo-content--sizing {
+  flex-direction: column;
+}
+.rd__typo--sizing {
+  flex-direction: column;
+}
+/* ------------06 Art--------- */
+.rd__art-intro {
+  flex-direction: column;
+}
+.art__grid--grident {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+/* ---------Footer------- */
+.footer-nav {
+  flex-direction: column;
+  gap: 19px;
 }

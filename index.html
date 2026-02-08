@@ -32,7 +32,7 @@
         </a>
         <!-- mobile : Menu toogle -->
         <div class="rd__menu-toogle">
-          <button class="ed__menu-toggle-btn">Menu</button>
+          <button class="rd__menu-toggle-btn">Menu</button>
         </div>
         <!-- Primary navigation -->
         <nav class="rd__nav">
@@ -911,7 +911,7 @@
                     />
                   </picture>
                   <div class="color__grid-content-caption">
-                    <p class="caption-2">Gradient</p>
+                    <p class="caption-2">Gradient 3</p>
                   </div>
                 </div>
                 <!-- content-4 -->
@@ -954,7 +954,7 @@
                 accuracy, efficiency, and financial stability.
               </p>
               <br /><br />
-              <picture>
+              <picture class="rd__typo-heading-img">
                 <source
                   media="(max-width:1279px)"
                   srcset="asset/image/typo-heading-tablet.png"
@@ -965,6 +965,7 @@
                 />
                 <img src="asset/image/typo-heading-desktop.png" alt="" />
               </picture>
+              <br /><br />
               <p>
                 Primary Sans-Serif
                 <span class="span-orange">(Rethink Sans Reg)</span> is a clean,
@@ -1220,6 +1221,7 @@
         <!-- footer end -->
       </main>
     </div>
+
     <script>
       const menuToggleBtn = document.querySelector(".rd__menu-toggle-btn");
       const sidebar = document.querySelector(".rd__sidebar");
@@ -1230,6 +1232,25 @@
           menuToggleBtn.textContent = sidebar.classList.contains("isOpen")
             ? "Close"
             : "Menu";
+        });
+
+        // Optional: Close menu when clicking outside on mobile
+        document.addEventListener("click", (event) => {
+          if (window.innerWidth <= 779) {
+            const isClickInsideSidebar = sidebar.contains(event.target);
+            const isMenuButton =
+              event.target === menuToggleBtn ||
+              menuToggleBtn.contains(event.target);
+
+            if (
+              !isClickInsideSidebar &&
+              !isMenuButton &&
+              sidebar.classList.contains("isOpen")
+            ) {
+              sidebar.classList.remove("isOpen");
+              menuToggleBtn.textContent = "Menu";
+            }
+          }
         });
       }
     </script>
