@@ -184,6 +184,12 @@ body {
   .caption-1 {
     font-size: 16px;
   }
+  .regular {
+    font-size: 41px;
+  }
+  .secondary-regular {
+    font-size: 41px;
+  }
 }
 
 /* base: Main website  */
@@ -234,8 +240,7 @@ body {
   gap: 10px;
   padding: 24px 0px 30px 32px;
 }
-.rd__nav-item {
-}
+
 .rd__nav-link {
   color: #000;
 }
@@ -249,8 +254,7 @@ body {
   flex-direction: column;
   padding: 24px 0 0 32px;
 }
-.rd__action {
-}
+
 .rd__action-link {
   color: var(--gray);
   text-transform: capitalize;
@@ -307,28 +311,9 @@ body {
   text-align: start;
   color: var(--gray);
 }
-/* Brand Guideline */
-.rd__intro {
-}
-
-/* .rd__intro-heading,
-.rd__intro-content {
-  flex: 1;
-} */
-.rd__intro-heading {
-  text-align: start;
-}
-.rd__intro-heading h1 {
-}
-.rd__intro-content {
-}
-.rd__intro-content p {
-}
 
 /* --------Contents----------------- */
 
-.rd__content-heading {
-}
 .rd__content-info {
   margin-left: 32px;
   display: flex;
@@ -336,29 +321,18 @@ body {
   gap: 10px;
 }
 
-.rd__content-info h2 {
-}
 .rd__content-num {
   color: var(--gray);
 }
 
 /* --------Brand Strategy----------------- */
 
-.rd__brand-strategy {
-}
-.rd__brand-strategy-heading {
-}
 .rd__brand-strategy-info {
   margin-left: 32px;
 }
 
 /* --------Personality----------------- */
-.rd__personality {
-}
-.rd__personality-heading {
-}
-.rd__personality-info {
-}
+
 .rd__personality-content {
   margin-left: 32px;
 }
@@ -389,14 +363,11 @@ body {
   gap: 32px;
   border-bottom: var(--border);
 }
-.rd__tone-heading {
-}
+
 .rd__tone-info {
   display: flex;
   flex-direction: column;
   gap: 40px;
-}
-.rd__tone-content {
 }
 
 /* --------sample copy----------------- */
@@ -409,8 +380,7 @@ body {
   align-items: flex-start;
   border-bottom: var(--border);
 }
-.rd__sample-copy-heading {
-}
+
 .rd__sample-copy-info {
   display: flex;
   padding: 32px 0;
@@ -447,10 +417,6 @@ body {
 .rd__typo-intro h1,
 .rd__typo-heading {
   flex: 1;
-}
-.rd__logo-intro h1 {
-}
-.rd__logo-intro p {
 }
 
 .rd__logo-images,
@@ -501,10 +467,7 @@ body {
   align-items: center;
 }
 /* --------04 Color----------------- */
-.rd__color {
-}
-.rd__color-intro {
-}
+
 .rd__color-primary-content {
   display: flex;
   flex-direction: column;
@@ -519,7 +482,7 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  border: 1px solid;
+  /* border: 1px solid; */
   gap: 10px;
 }
 .color__grid-content picture {
@@ -564,12 +527,6 @@ body {
   gap: 20px 32px;
 }
 /* --------05 Typography----------------- */
-.rd__typo {
-}
-.rd__typo-intro {
-}
-.rd__typo-heading {
-}
 
 .rd__typo-content {
   padding: 0 32px;
@@ -676,6 +633,7 @@ body {
 .footer-nav li {
 }
 .footer-nav li a {
+  color: inherit;
 }
 .footer-info-2 {
   border-top: var(--border);
@@ -685,8 +643,11 @@ body {
   display: flex;
   gap: 16px;
 }
+.footer-link li a {
+  color: inherit;
+}
 .footer-link li:last-child {
-  margin-right: auto;
+  margin-left: auto;
 }
 
 /* --------Responsive tablet----------------- */
@@ -753,6 +714,12 @@ body {
   }
   .rd__typo--variations {
     flex-direction: column-reverse;
+  }
+
+  /* ----------06 Footer------- */
+  .footer-info-1 {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
@@ -822,10 +789,10 @@ body {
     flex-direction: column;
   }
 
-  .rd__color {
+  /* .rd__color {
   }
   .rd__color-intro {
-  }
+  } */
   .rd__color-primary-content {
     display: flex;
     flex-direction: column;
@@ -839,7 +806,7 @@ body {
     flex: 1;
     display: flex;
     flex-direction: column;
-    border: 1px solid;
+    /* border: 1px solid; */
     gap: 10px;
   }
   .color__grid-content picture {
@@ -893,5 +860,10 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     gap: 40px;
+  }
+  /* ---------Footer------- */
+  .footer-nav {
+    flex-direction: column;
+    gap: 19px;
   }
 }
