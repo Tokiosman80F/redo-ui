@@ -1,5 +1,6 @@
 :root {
   --font-primary: "Rethink Sans", system-ui, sans-serif;
+  --font-secondary: "Hedvig Letters Serif", serif;
   --black: #000000;
   --gray: #575757;
   --accent-1: #f45f00;
@@ -57,6 +58,45 @@ body {
   color: var(--accent-1);
 }
 /* Typography */
+.regular {
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+.regular-50 {
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+.regular-32 {
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.regular-20 {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.secondary-regular {
+  font-family: var(--font-secondary);
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+.secondary-regular-14 {
+  font-family: var(--font-secondary);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.3;
+}
 .display {
   font-family: var(--font-primary);
   font-size: 10px;
@@ -110,6 +150,7 @@ body {
   font-size: 13px;
   line-height: 1.2;
   letter-spacing: -0.01em;
+  font-weight: 500;
 }
 .link {
   font-family: var(--font-primary);
@@ -383,7 +424,8 @@ body {
 
 /* --------03 Logo----------------- */
 .rd__logo,
-.rd__color {
+.rd__color,
+.rd__typo {
   padding-top: 32px;
   padding-bottom: 120px;
   display: flex;
@@ -392,7 +434,8 @@ body {
   border-bottom: var(--border);
 }
 .rd__logo-intro,
-.rd__color-intro {
+.rd__color-intro,
+.rd__typo-intro {
   display: flex;
   justify-content: space-between;
   gap: 32px;
@@ -400,7 +443,9 @@ body {
 .rd__logo-intro h1,
 .rd__logo-intro p,
 .rd__color-intro h1,
-.rd__color-intro p {
+.rd__color-intro p,
+.rd__typo-intro h1,
+.rd__typo-heading {
   flex: 1;
 }
 .rd__logo-intro h1 {
@@ -518,6 +563,131 @@ body {
   grid-template-columns: repeat(2, 1fr);
   gap: 20px 32px;
 }
+/* --------05 Typography----------------- */
+.rd__typo {
+}
+.rd__typo-intro {
+}
+.rd__typo-heading {
+}
+
+.rd__typo-content {
+  padding: 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+.rd__typeface {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.rd__typeface--primary {
+  display: flex;
+  flex-direction: column;
+  gap: 20;
+  text-align: start;
+}
+.rd__typo-content--sizing {
+  display: flex;
+  flex-direction: column;
+}
+.rd__typo--sizing {
+  border-top: var(--border);
+  display: flex;
+  gap: 64px;
+  padding: 32px 0 40px 0;
+}
+.rd__typo--sizing h3,
+.rd__typo--sizing p {
+  flex: 1;
+}
+.rd__typo--variations {
+  display: flex;
+  flex-direction: column;
+}
+.rd__typo--variation {
+  padding: 30px 32px 30px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.rd__typo--variation h2 {
+  width: 100%;
+  max-width: 654px;
+}
+.rd__typo--variation h3 {
+  width: 100%;
+  max-width: 505px;
+}
+.rd__typo--variation h4 {
+  width: 100%;
+  max-width: 517px;
+}
+.rd__typo--variation-footer {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: var(--border);
+  padding-bottom: 4px;
+}
+
+/* -----------06 Art Diretion------------- */
+.rd__art {
+  display: flex;
+  flex-direction: column;
+  gap: 65px;
+}
+.rd__art-intro {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.rd__art-intro h1,
+.rd__art-intro p {
+  flex: 1;
+}
+
+.art__grid--grident {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px 32px;
+}
+
+/* --------Footer-------- */
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 31px;
+  padding-top: 128px;
+  padding-bottom: 32px;
+}
+.footer-info-1 {
+  display: flex;
+  gap: 59px;
+  justify-content: flex-start;
+  align-items: end;
+  padding-left: 40px;
+}
+.footer-nav {
+  display: flex;
+  gap: 51px;
+}
+.footer-nav li {
+}
+.footer-nav li a {
+}
+.footer-info-2 {
+  border-top: var(--border);
+  padding: 40px 40px 20px 40px;
+}
+.footer-link {
+  display: flex;
+  gap: 16px;
+}
+.footer-link li:last-child {
+  margin-right: auto;
+}
 
 /* --------Responsive tablet----------------- */
 @media (max-width: 1279px) {
@@ -577,6 +747,13 @@ body {
   /* ---04 color */
 
   /* --------04 Color----------------- */
+  /* --------05 Typograph----------------- */
+  .rd__typo-content--sizing {
+    flex-direction: column-reverse;
+  }
+  .rd__typo--variations {
+    flex-direction: column-reverse;
+  }
 }
 
 @media (max-width: 779px) {
@@ -693,5 +870,28 @@ body {
   .color__grid--grident {
     grid-template-columns: 1fr;
     gap: 32px;
+  }
+  /* -------------05 Typography------------------ */
+  .rd__typo-intro {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .rd__typo-heading {
+    padding-bottom: 60px;
+  }
+  .rd__typo-content--sizing {
+    flex-direction: column;
+  }
+  .rd__typo--sizing {
+    flex-direction: column;
+  }
+  /* ------------06 Art--------- */
+  .rd__art-intro {
+    flex-direction: column;
+  }
+  .art__grid--grident {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
 }
