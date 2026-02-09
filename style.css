@@ -246,8 +246,17 @@ body {
 .rd__nav-link {
   color: #000;
 }
+
+.rd__nav-link:hover {
+  color: var(--gray);
+}
+
 .rd__nav-link sup {
   color: var(--gray);
+}
+
+.rd__nav-link:hover sup {
+  color: var(--accent-1);
 }
 
 .rd__actions {
@@ -791,123 +800,124 @@ body {
     gap: 10px;
     border-bottom: var(--border);
   }
-}
-/* brand guideline */
-.rd__intro,
-.rd__content-table,
-.rd__brand-strategy,
-.rd__personality {
-  flex-direction: column;
-}
-.rd__intro-heading h1 br,
-.rd__brand-strategy-heading h1 br {
-  display: none;
-}
-/* Content table  */
-.rd__content-info,
-.rd__brand-strategy-info,
-.rd__personality-content {
-  margin-left: 0;
-}
-/* tone */
-.rd__tone {
-  flex-direction: column;
-}
-/* sample copy */
-.rd__sample-copy-info {
-  flex-direction: column;
-}
 
-/* --------03 Logo----------------- */
-.rd__logo {
-  gap: 30px;
-}
-.rd__logo-intro {
-  flex-direction: column;
-  gap: 12px;
-}
+  /* brand guideline */
+  .rd__intro,
+  .rd__content-table,
+  .rd__brand-strategy,
+  .rd__personality {
+    flex-direction: column;
+  }
+  .rd__intro-heading h1 br,
+  .rd__brand-strategy-heading h1 br {
+    display: none;
+  }
+  /* Content table  */
+  .rd__content-info,
+  .rd__brand-strategy-info,
+  .rd__personality-content {
+    margin-left: 0;
+  }
+  /* tone */
+  .rd__tone {
+    flex-direction: column;
+  }
+  /* sample copy */
+  .rd__sample-copy-info {
+    flex-direction: column;
+  }
 
-.logo__grid {
-  grid-template-columns: 1fr;
-}
+  /* --------03 Logo----------------- */
+  .rd__logo {
+    gap: 30px;
+  }
+  .rd__logo-intro {
+    flex-direction: column;
+    gap: 12px;
+  }
 
-/* --------04 Color----------------- */
+  .logo__grid {
+    grid-template-columns: 1fr;
+  }
 
-.rd__color-intro {
-  flex-direction: column;
-}
+  /* --------04 Color----------------- */
 
-.rd__color-primary-content {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-.color__grid {
-  flex-direction: column;
-  gap: 40px;
-}
-.color__grid-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+  .rd__color-intro {
+    flex-direction: column;
+  }
 
-  gap: 10px;
-}
-.color__grid-content picture {
-  width: 100%;
-  height: auto;
-}
-.color__grid-content picture img {
-  width: 100%;
-  height: auto;
-}
+  .rd__color-primary-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .color__grid {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .color__grid-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 
-.rd__color-secondary-content {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-.color__grid--secondary {
-  grid-template-columns: 1fr;
-  gap: 40px;
-}
+    gap: 10px;
+  }
+  .color__grid-content picture {
+    width: 100%;
+    height: auto;
+  }
+  .color__grid-content picture img {
+    width: 100%;
+    height: auto;
+  }
 
-.color__grid-content-caption {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
+  .rd__color-secondary-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .color__grid--secondary {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 
-.color__grid--grident {
-  grid-template-columns: 1fr;
-  gap: 32px;
-}
-/* -------------05 Typography------------------ */
-.rd__typo-intro {
-  flex-direction: column;
-  gap: 12px;
-}
-.rd__typo-heading {
-  padding-bottom: 60px;
-}
+  .color__grid-content-caption {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
 
-.rd__typo-content--sizing {
-  flex-direction: column;
-}
-.rd__typo--sizing {
-  flex-direction: column;
-}
-/* ------------06 Art--------- */
-.rd__art-intro {
-  flex-direction: column;
-}
-.art__grid--grident {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 40px;
-}
-/* ---------Footer------- */
-.footer-nav {
-  flex-direction: column;
-  gap: 19px;
+  .color__grid--grident {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  /* -------------05 Typography------------------ */
+  .rd__typo-intro {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .rd__typo-heading {
+    padding-bottom: 60px;
+  }
+
+  .rd__typo-content--sizing {
+    flex-direction: column;
+  }
+  .rd__typo--sizing {
+    flex-direction: column;
+  }
+  /* ------------06 Art--------- */
+  .rd__art-intro {
+    flex-direction: column;
+  }
+  .art__grid--grident {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  /* ---------Footer------- */
+  .footer-nav {
+    flex-direction: column;
+    gap: 19px;
+  }
 }

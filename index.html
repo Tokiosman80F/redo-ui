@@ -38,32 +38,32 @@
         <nav class="rd__nav">
           <ul class="rd__nav-list">
             <li class="rd__nav-item">
-              <a href="#" class="rd__nav-link paragraph-1">
+              <a href="#section--1" class="rd__nav-link paragraph-1">
                 Brand Strategy<sup class="display">01</sup></a
               >
             </li>
             <li class="rd__nav-item">
-              <a href="#" class="rd__nav-link paragraph-1">
+              <a href="#section--2" class="rd__nav-link paragraph-1">
                 Personality<sup class="display">02</sup></a
               >
             </li>
             <li class="rd__nav-item">
-              <a href="#" class="rd__nav-link paragraph-1">
+              <a href="#section--3" class="rd__nav-link paragraph-1">
                 Logo<sup class="display">03</sup></a
               >
             </li>
             <li class="rd__nav-item">
-              <a href="#" class="rd__nav-link paragraph-1">
+              <a href="#section--4" class="rd__nav-link paragraph-1">
                 Color<sup class="display">04</sup></a
               >
             </li>
             <li class="rd__nav-item">
-              <a href="#" class="rd__nav-link paragraph-1">
+              <a href="#section--5" class="rd__nav-link paragraph-1">
                 Typography<sup class="display">05</sup></a
               >
             </li>
             <li class="rd__nav-item">
-              <a href="#" class="rd__nav-link paragraph-1">
+              <a href="#section--6" class="rd__nav-link paragraph-1">
                 Art Direction<sup class="display">06</sup></a
               >
             </li>
@@ -154,7 +154,7 @@
         </section>
 
         <!-- Brand Strategy -->
-        <section class="rd__brand-strategy p-32">
+        <section id="section--1" class="rd__brand-strategy p-32">
           <div class="rd__brand-strategy-heading">
             <h1 class="heading-1">
               <span class="span-orange">01 </span>Brand <br />Strategy
@@ -204,7 +204,7 @@
         </section>
 
         <!-- Personality -->
-        <section class="rd__personality p-32">
+        <section id="section--2" class="rd__personality p-32">
           <div class="rd__personality-heading">
             <h1 class="heading-1">
               <span class="span-orange">02 </span>Personality
@@ -339,7 +339,7 @@
         <!-- sample copy end -->
 
         <!-- #03 : Logo -->
-        <section class="rd__logo p-32">
+        <section id="section--3" class="rd__logo p-32">
           <!-- Intro -->
           <div class="rd__logo-intro">
             <h1 class="heading-1"><span class="span-orange">03</span> Logo</h1>
@@ -562,7 +562,7 @@
         <!-- #03 : logo end-->
 
         <!-- #04 : Color start-->
-        <section class="rd__color p-32">
+        <section id="section--4" class="rd__color p-32">
           <!-- Intro -->
           <div class="rd__color-intro">
             <h1 class="heading-1"><span class="span-orange">04</span> Color</h1>
@@ -941,7 +941,7 @@
         <!-- #04 : Color end-->
 
         <!-- #5 typography -->
-        <section class="rd__typo p-32">
+        <section id="section--5" class="rd__typo p-32">
           <!-- Intro -->
           <div class="rd__typo-intro">
             <h1 class="heading-1">
@@ -1083,7 +1083,7 @@
         <!-- typography end -->
 
         <!-- 06 Art direction -->
-        <section class="rd__art p-32">
+        <section id="section--6" class="rd__art p-32">
           <!-- Intro -->
           <div class="rd__art-intro">
             <h1 class="heading-1">
@@ -1223,6 +1223,12 @@
     </div>
 
     <script>
+      const section1 = document.querySelector("#section--1");
+      const section2 = document.querySelector("#section--2");
+      const section3 = document.querySelector("#section--3");
+      const section4 = document.querySelector("#section--4");
+      const section5 = document.querySelector("#section--5");
+      const section6 = document.querySelector("#section--6");
       const menuToggleBtn = document.querySelector(".rd__menu-toggle-btn");
       const sidebar = document.querySelector(".rd__sidebar");
 
@@ -1253,6 +1259,19 @@
           }
         });
       }
+
+      // smooth scroll
+      document
+        .querySelector(".rd__nav-list")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          if (e.target.classList.contains("rd__nav-link")) {
+            console.log("yes");
+
+            let id = e.target.getAttribute("href");
+            document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+          }
+        });
     </script>
   </body>
 </html>
