@@ -128,7 +128,7 @@ body {
 .paragraph-1 {
   font-size: 18px;
   line-height: 1.2;
-  letter-spacing: -0.01em;
+  /* letter-spacing: -0.01em; */
   font-weight: 500;
 }
 .paragraph-2-bold {
@@ -303,8 +303,6 @@ body {
   border-bottom: var(--border);
 }
 
-.rd__intro-heading,
-.rd__intro-content,
 .rd__content-heading,
 .rd__content-info,
 .rd__brand-strategy-heading,
@@ -314,6 +312,7 @@ body {
 .rd__tone-heading,
 .rd__tone-info {
   flex: 1;
+  border: 1px solid;
 }
 
 .rd__intro-content,
@@ -324,6 +323,17 @@ body {
 }
 
 /* --------Contents----------------- */
+.rd__intro {
+  justify-content: space-between;
+}
+.rd__intro-heading {
+  width: 100%;
+  max-width: 419px;
+}
+.rd__intro-content {
+  width: 100%;
+  max-width: 515px;
+}
 
 .rd__content-info {
   margin-left: 32px;
