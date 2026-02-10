@@ -38,9 +38,18 @@ body {
   overflow: hidden;
 }
 /* Reuse */
+/* .container {
+  margin: 0 auto;
+  max-width: 1280px;
+  width: 100%;
+} */
 .border-1 {
   border: 1px solid;
 }
+.border-none {
+  border: none;
+}
+
 .hidden {
   display: none;
 }
@@ -294,8 +303,7 @@ body {
 /* common class */
 .rd__intro,
 .rd__content-table,
-.rd__brand-strategy,
-.rd__personality {
+.rd__brand-strategy {
   padding-top: 32px;
   padding-bottom: 120px;
   display: flex;
@@ -312,7 +320,6 @@ body {
 .rd__tone-heading,
 .rd__tone-info {
   flex: 1;
-  border: 1px solid;
 }
 
 .rd__intro-content,
@@ -322,7 +329,7 @@ body {
   color: var(--gray);
 }
 
-/* --------Contents----------------- */
+/* --------Intro----------------- */
 .rd__intro {
   justify-content: space-between;
 }
@@ -335,6 +342,10 @@ body {
   max-width: 515px;
 }
 
+/* --------Contents----------------- */
+.rd__content-table {
+  padding-bottom: 128px;
+}
 .rd__content-info {
   margin-left: 32px;
   display: flex;
@@ -354,6 +365,12 @@ body {
 
 /* --------Personality----------------- */
 
+.rd__personality {
+  padding-top: 32px;
+  padding-bottom: 32px;
+  display: flex;
+  gap: 32px;
+}
 .rd__personality-content {
   margin-left: 32px;
 }
@@ -394,8 +411,8 @@ body {
 
 /* --------sample copy----------------- */
 .rd__sample-copy {
-  padding-top: 30px;
-  padding-bottom: 80px;
+  padding-top: 32px;
+  padding-bottom: 152px;
   display: flex;
   flex-direction: column;
   gap: 64px;
@@ -405,10 +422,12 @@ body {
 
 .rd__sample-copy-info {
   display: flex;
-  padding: 32px 0;
+  padding-bottom: 32px;
   gap: 32px;
 }
 .rd__sample-copy-content {
+  /* max-width: 217px; */
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -501,7 +520,9 @@ body {
   justify-content: space-between;
 }
 .color__grid-content {
-  flex: 1;
+  /* flex: 1; */
+  width: 100%;
+  /* max-width: 467px; */
   display: flex;
   flex-direction: column;
   /* border: 1px solid; */
@@ -549,7 +570,14 @@ body {
   gap: 20px 32px;
 }
 /* --------05 Typography----------------- */
-
+/* .rd__typo-heading {
+  padding-top: 40px;
+  padding-bottom: 40px;
+} */
+.rd__typo-intro {
+  padding-top: 32px;
+  padding-bottom: 40px;
+}
 .rd__typo-heading-img {
   width: 100%;
   display: block;
@@ -576,7 +604,7 @@ body {
 .rd__typeface--primary {
   display: flex;
   flex-direction: column;
-  gap: 20;
+  gap: 20px;
   text-align: start;
 }
 .rd__typo-content--sizing {
@@ -632,6 +660,7 @@ body {
   display: flex;
   justify-content: space-between;
   gap: 32px;
+  padding-top: 20px;
 }
 
 .rd__art-intro h1,
@@ -642,7 +671,7 @@ body {
 .art__grid--grident {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 40px 32px;
+  gap: 40px 16px;
 }
 
 /* --------Footer-------- */
@@ -837,9 +866,13 @@ body {
     flex-direction: column;
   }
 
+  .rd__sample-copy {
+    padding-bottom: 112px;
+  }
   /* --------03 Logo----------------- */
   .rd__logo {
     gap: 30px;
+    padding-top: 32px;
   }
   .rd__logo-intro {
     flex-direction: column;
@@ -900,6 +933,10 @@ body {
   .color__grid--grident {
     grid-template-columns: 1fr;
     gap: 32px;
+  }
+
+  .rd__brand-strategy {
+    padding-bottom: 80px;
   }
   /* -------------05 Typography------------------ */
   .rd__typo-intro {
